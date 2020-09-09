@@ -8,10 +8,25 @@ It would build netcore apps with .NET Core SDK container, and run it on .NET Cor
 
 ## Build
 ``` PowerShell
-docker build --pull -t myfirstdocker .
+cd ./src
+docker build --pull -t <docker-hub-username>/netcore_helloworld .
 ```
 
 ## Run
 ``` PowerShell
-docker run --rm myfirstdocker
+docker run --rm <docker-hub-username>/netcore_helloworld
 ```
+
+## Push to container registry
+``` PowerShell
+docker push <docker-hub-username>/netcore_helloworld:latest
+```
+
+## Pull and Run
+``` PowerShell
+docker pull <docker-hub-username>/netcore_helloworld:latest
+docker run --rm <docker-hub-username>/netcore_helloworld
+```
+
+See also: https://hub.docker.com/repository/docker/yusukemasuda/netcore_helloworld
+ - This is a container image built from those source code and pushed with above commands to my repository on dockerhub.
